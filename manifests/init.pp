@@ -11,7 +11,7 @@ class maven {
     cwd => "/tmp",
     command => "wget $maven_url",
     creates => $maven_bundle,
-    path    => ["/usr/bin", "/bin"],
+    path    => ["/opt/boxen/homebrew/bin"],
   }
 
   file { "/opt/apache-maven-3.0.5":
@@ -22,7 +22,7 @@ class maven {
     cwd     => "/opt",
     command => "tar xvf $maven_bundle",
     creates => '/opt/apache-maven-3.0.5',
-    path    => ["/usr/bin", "/bin"],
+    path    => ["/usr/bin"],
     require => File[$maven_bundle]
   }
 
