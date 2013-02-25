@@ -32,7 +32,7 @@ class maven {
     require => File['/usr/local/apache-maven-3.0.5'],
   }
   
-  file { "${boxen::config::homebrewdir}/bin/mvn": 
+  file { "${boxen::config::homedir}/bin/mvn": 
     ensure => link,
     target  => "/usr/local/maven/bin/mvn",
     require => File['/usr/local/maven'],
