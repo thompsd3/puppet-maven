@@ -1,7 +1,10 @@
 class maven {
+
+  require boxen::environment
+
   $maven_url = 'http://apache.komsys.org/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz'
-  $maven_bundle = "/tmp/apache-maven-3.0.5-bin.tar.gz"
-  $maven_path = /usr/local/apache-maven-3.0.5
+  $maven_bundle = '/tmp/apache-maven-3.0.5-bin.tar.gz'
+  $maven_path = '/usr/local/apache-maven-3.0.5'
 
   file { $maven_bundle:
     ensure => present,
