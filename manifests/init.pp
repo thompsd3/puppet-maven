@@ -25,7 +25,7 @@ class maven {
   exec { "Extract maven":
     cwd     => "/usr/local",
     command => "tar xvf $maven_bundle",
-    creates => '$maven_path',
+    creates => $maven_path,
     path    => ["/usr/bin"],
     require => File[$maven_bundle]
   }
