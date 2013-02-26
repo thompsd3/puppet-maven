@@ -1,6 +1,6 @@
 class maven {
 
-  require boxen::environment
+  require boxen::config
 
   $maven_url = 'http://apache.komsys.org/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz'
   $maven_bundle = '/tmp/apache-maven-3.0.5-bin.tar.gz'
