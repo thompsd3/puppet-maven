@@ -33,7 +33,7 @@ class maven {
   file { '/usr/local/maven':
     ensure  => link,
     target  => '$maven_path',
-    require => File['$maven_path'],
+    require => File[$maven_path],
   }
   
   file { '${boxen::config::home}/bin/mvn': 
