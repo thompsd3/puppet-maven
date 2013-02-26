@@ -30,7 +30,7 @@ class maven {
 
   file { '/usr/local/maven':
     ensure  => link,
-    target  => '$maven_path',
+    target  => '/usr/local/apache-maven-3.0.5',
     require => File['/usr/local/apache-maven-3.0.5'];
   }
   
