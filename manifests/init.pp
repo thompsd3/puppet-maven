@@ -13,7 +13,7 @@ class maven {
     cwd => '/tmp',
     command => 'wget $maven_url',
     creates => $maven_bundle,
-    path    => [/opt/boxen/homebrew/bin'];
+    path    => ['/opt/boxen/homebrew/bin'];
   }
 
   exec { 'Extract maven':
