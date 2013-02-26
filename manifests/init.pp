@@ -24,7 +24,7 @@ class maven {
     require => Exec['Fetch maven'];
   }
 
-  file { /usr/local/apache-maven-3.0.5:
+  file { '/usr/local/apache-maven-3.0.5':
     require => Exec['Extract maven'];
   }
 
