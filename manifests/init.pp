@@ -1,25 +1,21 @@
 class maven {
 
-  $maven_url = 'http://apache.komsys.org/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz'
-  $maven_bundle = '/tmp/apache-maven-3.0.5-bin.tar.gz'
-  $maven_path = '/usr/local/apache-maven-3.0.5'
-
-  file { $maven_bundle:
+  file { '/tmp/apache-maven-3.0.5-bin.tar.gz':
     ensure => present,
     require => Exec['Fetch maven'],
   }
 
   exec { 'Fetch maven':
     cwd => '/tmp',
-    command => 'wget $maven_url',
-    creates => $maven_bundle,
+    command => 'wget http://apache.komsys.org/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz',
+    creates => '/tmp/apache-maven-3.0.5-bin.tar.gz',
     path    => ['/opt/boxen/homebrew/bin'];
   }
 
   exec { 'Extract maven':
     cwd     => '/usr/local',
-    command => 'tar xvf $maven_bundle',
-    creates => $maven_path,
+    command => 'tar xvf /tmp/apache-maven-3.0.5-bin.tar.gz',
+    creates => '/usr/local/apache-maven-3.0.5',
     path    => ['/usr/bin'],
     require => Exec['Fetch maven'];
   }
