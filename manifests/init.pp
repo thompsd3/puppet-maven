@@ -1,5 +1,7 @@
 class maven {
 
+  require wget
+
   file { '/tmp/apache-maven-3.0.5-bin.tar.gz':
     ensure => present,
     require => Exec['Fetch maven'],
