@@ -5,9 +5,7 @@ Installs maven.
 ## Usage
 
 ```puppet
-boxen::maven { 'maven':
-  salutation => 'fam'
-}
+require maven
 ```
 
 ## Required Puppet Modules
