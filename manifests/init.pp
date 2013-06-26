@@ -3,7 +3,7 @@ class maven {
   require wget
 
   file { '/opt/maven':
-    ensure => present,
+    ensure => 'directory',
     alias  => 'opt-maven'
   }
 
