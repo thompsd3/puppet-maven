@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe "maven" do
-  let(:facts) { default_test_facts }
-
   it do
     should contain_file('/usr/local/apache-maven-3.1.1').with({
       :source  => 'puppet:///modules/java/java.sh',
