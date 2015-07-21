@@ -1,4 +1,4 @@
-class maven($version = '3.2.2') {
+class maven($version = '3.2.5') {
 
   require wget
 
