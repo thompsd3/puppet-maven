@@ -29,7 +29,7 @@ class maven($version = '3.2.5') {
   file { '/Applications/maven':
     ensure  => link,
     target  => "/Applications/apache-maven-${version}",
-    require => File["/usr/local/apache-maven-${version}"];
+    require => File["/Applications/apache-maven-${version}"];
   }
   
   file { '/opt/boxen/bin/mvn': 
