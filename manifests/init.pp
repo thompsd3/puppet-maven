@@ -1,7 +1,5 @@
 class maven {
 
-  require wget
-
   file { '/opt/maven':
     ensure => 'directory',
     alias  => 'opt-maven'
@@ -9,7 +7,7 @@ class maven {
 
   exec { 'fetch-maven':
     cwd     => '/opt/maven',
-    command => 'wget http://mirror.nexcess.net/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz',
+    command => 'curl http://mirror.nexcess.net/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz',
     creates => '/opt/maven/apache-maven-3.0.5-bin.tar.gz',
     path    => ['/opt/boxen/homebrew/bin'],
     alias   => 'fetch-maven',
